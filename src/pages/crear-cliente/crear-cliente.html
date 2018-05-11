@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Nuevo cliente</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form (ngSubmit)="crCliente()">
+    <ion-item text-wrap>
+      <ion-label stacked>Nombre</ion-label>
+      <ion-input type="text" name="nombre"
+                 [(ngModel)]="cliente.nombre">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>CIF</ion-label>
+      <ion-input type="text" name="cif"
+                  [(ngModel)]="cliente.cif">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Domicilio</ion-label>
+      <ion-input type="text" name="domicilio"
+                  [(ngModel)]="cliente.domicilio">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Código postal</ion-label>
+      <ion-input type="number" name="cp"
+                  [(ngModel)]="cliente.cp">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Localidad</ion-label>
+      <ion-input type="text" name="localidad"
+                  [(ngModel)]="cliente.localidad">
+      </ion-input>
+    </ion-item>
+    <!-- <ion-item text-wrap>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-select name="provincia" [(ngModel)]="provincia">
+        <ion-option *ngFor="let provincia of provincias"
+                    value="provincia">
+          {{provincia}}
+        </ion-option>
+      </ion-select>
+    </ion-item> -->
+    <ion-item text-wrap>
+      <ion-label stacked>Provincia</ion-label>
+      <ion-input type="text" name="provincia"
+                  [(ngModel)]="cliente.provincia">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Teléfono</ion-label>
+      <ion-input type="text" name="telefono"
+                  [(ngModel)]="cliente.telefono">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Correo Electrónico</ion-label>
+      <ion-input type="text" name="email"
+                  [(ngModel)]="cliente.email">
+      </ion-input>
+    </ion-item>
+    <ion-item text-wrap>
+      <ion-label stacked>Persona contacto</ion-label>
+      <ion-input type="text" name="contacto"
+                  [(ngModel)]="cliente.contacto">
+      </ion-input>
+    </ion-item>
+    <button ion-button type="submit">
+      Crear cliente
+    </button>
+  </form>
+</ion-content>
