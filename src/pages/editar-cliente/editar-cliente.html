@@ -1,6 +1,6 @@
 <ion-header>
 <ion-toolbar>
-  <h3 padding>Nuevo cliente</h3>
+  <h3 padding>Modificar cliente</h3>
   <ion-buttons end>
     <button ion-button icon-only
             (click)="cancelar()">
@@ -10,11 +10,11 @@
 </ion-toolbar>
 </ion-header>
 <ion-content padding>
-  <form (ngSubmit)="crCliente()">
+  <form (ngSubmit)="modificarCliente()">
     <ion-item text-wrap>
       <ion-label stacked>Nombre</ion-label>
       <ion-input type="text" name="nombre"
-                 [(ngModel)]="cliente.nombre">
+                  [(ngModel)]="cliente.nombre">
       </ion-input>
     </ion-item>
     <ion-item text-wrap>
@@ -71,7 +71,7 @@
     </ion-item>
     <div text-center>
       <button ion-button type="submit">
-        Crear cliente
+        Guardar cambios
       </button>
     </div>
   </form>

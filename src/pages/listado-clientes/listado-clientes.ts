@@ -19,6 +19,10 @@ export class ListadoClientesPage {
   }
 
   ionViewDidLoad() {
+    this.cargarClientes();
+  }
+
+  cargarClientes(){
     this.http.get('http://localhost:3000/cliente')
           .map((resp:any)=>{
             return resp
@@ -31,16 +35,37 @@ export class ListadoClientesPage {
   }
 
   crearCliente(){
-    let modal = this.modal.create('CrearClientePage')
+    let modal = this.modal.create('CrearClientePage');
 
-    modal.onDidDismiss(cliente=>{
-      if(cliente){
-        this.clientes.push(cliente);
-      }
+    // modal.onDidDismiss(cliente=>{
+    //   if(cliente){
+    //     this.clientes.push(cliente);
+    //   }
+    // })
+
+    modal.onDidDismiss(()=>{
+      this.cargarClientes();
     })
 
     modal.present();
 
+  }
+
+  verCliente(cliente){
+    this.navCtrl.push('VerClientePage',{cliente: cliente})
+  }
+
+  editarCliente(cliente){
+    this.navCtrl.push('EditarClientePage',{cliente: cliente})
+  }
+
+  eliminarCliente(id){
+    this.http.delete('http://localhost:3000/cliente/'+ id)
+                .subscribe((resp:any)=>{
+                  this.cargarClientes();
+                },(error)=>{
+                  console.log(error)
+                })
   }
 
 }
