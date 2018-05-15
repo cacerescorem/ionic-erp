@@ -2,28 +2,24 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the VentasPage page.
+ * Generated class for the ComprasPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
 
-//@IonicPage()
+@IonicPage()
 @Component({
-  selector: 'page-ventas',
-  templateUrl: 'ventas.html',
+  selector: 'page-compras',
+  templateUrl: 'compras.html',
 })
-export class VentasPage {
+export class ComprasPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    
-  }
-
-  goToClientes(){
-    this.navCtrl.push('ListadoClientesPage');
+    console.log('ionViewDidLoad ComprasPage');
   }
 
 }
